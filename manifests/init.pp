@@ -1,7 +1,5 @@
-class memcached($configs) {
+class memcached() {
     #package { "memcached":
     #    ensure => installed,
     #}
-
-    memcached::config{$configs:}
 }
