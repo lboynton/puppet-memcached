@@ -1,6 +1,10 @@
 class memcached() {
+    # use memcache from rpmforge
+    class { "rpmforge": }
+
     package { "memcached":
-        ensure => installed,
+        ensure  => installed,
+        require => Class['rpmforge'],
     }
     
     service { "memcached":
