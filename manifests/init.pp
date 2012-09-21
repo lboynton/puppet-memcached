@@ -18,7 +18,7 @@ class memcached() {
         alias  => 'memcached-init',
     }
     
-    file { "/usr/share/memcached/scripts/start-memcached":
+    file { "/usr/bin/start-memcached":
         ensure => present,
         source => "puppet:///modules/memcached/start-memcached",
         owner  => 'root',
