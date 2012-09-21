@@ -3,5 +3,5 @@ class memcached(configs) {
     #    ensure => installed,
     #}
 
-    memcached:config(configs)
+    memcached:config(configs:)
 }
