@@ -5,7 +5,7 @@ class memcached() {
     }
 
     package { "memcached":
-        ensure  => "1.4.7",
+        ensure  => latest,
         require => Class['rpmforge'],
     }
     
