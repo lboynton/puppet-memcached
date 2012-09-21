@@ -3,7 +3,7 @@ class memcached() {
     class { "rpmforge": }
 
     package { "memcached":
-        ensure  => installed,
+        ensure  => "1.4.7",
         require => Class['rpmforge'],
     }
     
