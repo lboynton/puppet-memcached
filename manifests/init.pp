@@ -24,7 +24,7 @@ class memcached() {
         owner  => 'root',
         group  => 'root',
         mode   => '0755',
-        alias  => 'memcached-init',
+        alias  => 'memcached-bin',
     }
     
     service { "memcached":
