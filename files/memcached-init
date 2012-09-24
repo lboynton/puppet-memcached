@@ -83,7 +83,7 @@ start () {
     echo -n "Starting $DESC: "
     # ensure that /var/run/memcached has proper permissions
     chown $USER /var/run/memcached
-    daemon "$DAEMONBOOTSTRAP" /etc/${NAME}.conf $PIDFILE
+    $DAEMONBOOTSTRAP /etc/${NAME}.conf $PIDFILE
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch /var/lock/subsys/memcached
