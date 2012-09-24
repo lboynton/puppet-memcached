@@ -26,7 +26,6 @@ DAEMON=/usr/bin/memcached
 DAEMONNAME=memcached
 DAEMONBOOTSTRAP=/usr/bin/start-memcached
 DESC=memcached
-USER=memcached
 
 test -x $DAEMON || exit 0
 test -x $DAEMONBOOTSTRAP || exit 0
@@ -75,14 +74,12 @@ fi;
 CONFIG_NUM=${#CONFIGS[@]}
 for ((i=0; i < $CONFIG_NUM; i++)); do
   NAME=${CONFIGS[${i}]}
-  PIDFILE="/var/run/memcached/${NAME}.pid"
+  PIDFILE="/var/run/${NAME}.pid"
 
 RETVAL=0
 
 start () {
     echo -n "Starting $DESC: "
-    # ensure that /var/run/memcached has proper permissions
-    chown $USER /var/run/memcached
     $DAEMONBOOTSTRAP /etc/${NAME}.conf $PIDFILE
     RETVAL=$?
     echo
