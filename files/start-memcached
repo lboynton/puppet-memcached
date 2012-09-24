@@ -115,6 +115,8 @@ if($pid == 0)
       if(open PIDHANDLE,">$pidfile")
       {
           print PIDHANDLE $pid;
+          # need blank new line at the end of pid file to work on Redhat
+          print PIDHANDLE "\n";
           close PIDHANDLE;
       }else{
 
