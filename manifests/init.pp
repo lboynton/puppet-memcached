@@ -35,6 +35,11 @@ class memcached() {
         mode   => '0644',
         alias  => 'memcached-conf',
     }
+
+    user { 'memcached':
+        ensure => present,
+        system => true,
+    }
     
     service { "memcached":
         ensure   => running,
@@ -44,6 +49,7 @@ class memcached() {
             File["memcached-init"],
             File["memcached-bin"],
             File["memcached-conf"],
+            User["memcached"],
         ]
     }
 }
