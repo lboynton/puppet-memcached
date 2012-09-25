@@ -26,6 +26,15 @@ class memcached() {
         mode   => '0755',
         alias  => 'memcached-bin',
     }
+
+    file { "/etc/memcached.conf":
+        ensure => present,
+        source => "puppet:///modules/memcached/memcached.conf",
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0755',
+        alias  => 'memcached-conf',
+    }
     
     service { "memcached":
         ensure   => running,
@@ -34,6 +43,7 @@ class memcached() {
             Package['memcached'],
             File["memcached-init"],
             File["memcached-bin"],
+            File["memcached-conf"],
         ]
     }
 }
