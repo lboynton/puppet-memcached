@@ -32,7 +32,7 @@ class memcached() {
         source => "puppet:///modules/memcached/memcached.conf",
         owner  => 'root',
         group  => 'root',
-        mode   => '0755',
+        mode   => '0644',
         alias  => 'memcached-conf',
     }
     
