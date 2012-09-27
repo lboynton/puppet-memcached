@@ -80,6 +80,7 @@ RETVAL=0
 
 start () {
     echo -n "Starting $DESC: "
+    # TODO: should use daemon function?
     $DAEMONBOOTSTRAP /etc/${NAME}.conf $PIDFILE
     RETVAL=$?
     echo
