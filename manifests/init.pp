@@ -27,6 +27,7 @@ class memcached() {
         alias  => 'memcached-bin',
     }
 
+    # todo: can be removed? Do we need this? Should just be using memcached_*.conf.
     file { "/etc/memcached.conf":
         ensure => present,
         source => "puppet:///modules/memcached/memcached.conf",
