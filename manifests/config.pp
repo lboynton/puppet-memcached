@@ -1,6 +1,6 @@
 define memcached::config(
-    $port, 
-    $memory,
+    $port			= 11211, 
+    $memory			= 64,
     $listen			= false,
 	$connections	= 1024,		# Limit the number of simultaneous incoming connections
 ) {
