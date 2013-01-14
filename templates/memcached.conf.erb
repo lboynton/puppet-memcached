@@ -2,3 +2,6 @@
 -p <%= @port %>
 -u memcached
 -c 1024
+<% if @listen %>
+  -l <%= listen %>
+<% end -%>
