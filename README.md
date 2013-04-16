@@ -5,17 +5,18 @@ Tested on CentOS 6.
 
 Dependencies
 --------------
+* [puppet-module-epel](https://github.com/stahnma/puppet-module-epel)
 * [puppet-rpmforge](https://github.com/lboynton/puppet-rpmforge)
 
 Usage
 --------------
 To use defaults:
 
-	include memcache
+	include memcached
 
 To run multiple instances:
 
-	include memcache
+	include memcached
 
 	memcached::config { instance1:
 		port	=> 11211,
