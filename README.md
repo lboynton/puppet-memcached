@@ -11,11 +11,11 @@ Usage
 --------------
 To use defaults:
 
-	include memcache
+	include memcached
 
 To run multiple instances:
 
-	include memcache
+	include memcached
 
 	memcached::config { instance1:
 		port	=> 11211,
