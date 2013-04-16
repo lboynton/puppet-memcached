@@ -10,12 +10,13 @@ class memcached() {
     }
 
     file { '/etc/init.d/memcached':
-        ensure => present,
-        source => 'puppet:///modules/memcached/memcached-init',
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0755',
-        alias  => 'memcached-init',
+        ensure  => present,
+        source  => 'puppet:///modules/memcached/memcached-init',
+        owner   => 'root',
+        group   => 'root',
+        mode    => '0755',
+        alias   => 'memcached-init',
+        require => Package['memcached'],
     }
 
     file { '/usr/bin/start-memcached':
