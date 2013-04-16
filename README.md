@@ -5,6 +5,7 @@ Tested on CentOS 6.
 
 Dependencies
 --------------
+* [puppet-module-epel](https://github.com/stahnma/puppet-module-epel)
 * [puppet-rpmforge](https://github.com/lboynton/puppet-rpmforge)
 
 Usage
