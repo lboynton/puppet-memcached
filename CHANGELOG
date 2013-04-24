@@ -1,2 +1,4 @@
+2013-04-24 Lee Boynton <lee@lboynton.com> 0.0.2
+Fixed stop function in init script not working in CentOS
 2013-04-16 Lee Boynton <lee@lboynton.com> 0.0.1
 Initial release

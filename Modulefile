@@ -1,5 +1,5 @@
 name 'lboynton-memcached'
-version '0.0.1'
+version '0.0.2'
 source 'https://github.com/lboynton/puppet-memcached'
 author 'lboynton'
 dependency 'stahnma/epel', '0.0.3'
