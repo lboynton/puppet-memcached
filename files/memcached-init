@@ -88,7 +88,7 @@ start () {
 }
 stop () {
     echo -n "Stopping $DESC: "
-    killproc -p $PIDFILE /usr/bin/memcached
+    pkill -F $PIDFILE
     RETVAL=$?
     echo
     if [ $RETVAL -eq 0 ] ; then
