@@ -35,7 +35,7 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   config.vm.share_folder "memcached", "/srv/puppet/modules/memcached", ".", :nfs => true
-  config.vm.share_folder "rpmforge", "/srv/puppet/modules/rpmforge", "modules/rpmforge", :nfs => true
+  config.vm.share_folder "remi", "/srv/puppet/modules/remi", "modules/remi", :nfs => true
   config.vm.share_folder "epel", "/srv/puppet/modules/epel", "modules/epel", :nfs => true
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests

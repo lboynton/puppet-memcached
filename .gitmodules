@@ -1,6 +1,6 @@
-[submodule "modules/rpmforge"]
-	path = modules/rpmforge
-	url = https://github.com/lboynton/puppet-rpmforge.git
 [submodule "modules/epel"]
 	path = modules/epel
 	url = https://github.com/stahnma/puppet-module-epel
+[submodule "modules/remi"]
+	path = modules/remi
+	url = https://github.com/lboynton/puppet-remi.git

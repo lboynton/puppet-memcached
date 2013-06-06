@@ -1,12 +1,10 @@
-class memcached() {
-    # use memcache from rpmforge-extras repo
-    class { 'rpmforge':
-        testing => 1
-    }
+class memcached {
+    include epel
+    include remi
 
     package { 'memcached':
         ensure  => installed,
-        require => Class['rpmforge'],
+        require => Class['remi'],
     }
 
     file { '/etc/init.d/memcached':
