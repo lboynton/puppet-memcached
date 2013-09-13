@@ -12,18 +12,22 @@ Usage
 --------------
 To use defaults:
 
-	include memcached
+```puppet
+include memcached
+```
 
 To run multiple instances:
 
-	include memcached
+```puppet
+include memcached
 
-	memcached::config { instance1:
-		port	=> 11211,
-		memory	=> 64,
-	}
+memcached::config { instance1:
+	port	=> 11211,
+	memory	=> 64,
+}
 
-	memcached::config { instance2:
-		port	=> 11212,
-		memory	=> 128,
-	}
+memcached::config { instance2:
+	port	=> 11212,
+	memory	=> 128,
+}
+```
