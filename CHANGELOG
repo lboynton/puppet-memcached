@@ -1,3 +1,5 @@
+2013-10-25 Lee Boynton <lee@lboynton.com> 0.1.1
+Use semantic versioning when specifying module dependencies
 2013-06-06 Lee Boynton <lee@lboynton.com> 0.1.0
 Use remi repository instead of rpmforge-extras
 2013-04-24 Lee Boynton <lee@lboynton.com> 0.0.2
