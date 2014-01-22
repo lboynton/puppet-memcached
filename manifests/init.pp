@@ -1,4 +1,9 @@
-class memcached {
+class memcached(
+    $port           = 11211,    # Port number to listen on
+    $memory         = 64,       # Maximum amount of memory to use
+    $listen         = false,    # The IP address to listen on, defaults to all
+    $connections    = 1024,     # Limit the number of simultaneous incoming connections
+) {
     include epel
     include remi
 
@@ -26,19 +31,22 @@ class memcached {
         alias  => 'memcached-bin',
     }
 
-    # todo: can be removed? Do we need this? Should just be using memcached_*.conf.
+    # remove default config file, use memcached_*.conf instead
     file { '/etc/memcached.conf':
-        ensure => present,
-        source => 'puppet:///modules/memcached/memcached.conf',
-        owner  => 'root',
-        group  => 'root',
-        mode   => '0644',
-        alias  => 'memcached-conf',
+        ensure => absent,
     }
 
     user { 'memcached':
         ensure => present,
         system => true,
+    }
+
+    memcached::config { 'default':
+        port        => $port,
+        memory      => $memory,
+        listen      => $listen,
+        connections => $connections,
+        before      => Service['memcached'],
     }
 
     service { 'memcached':
@@ -50,7 +58,6 @@ class memcached {
             Package['memcached'],
             File['memcached-init'],
             File['memcached-bin'],
-            File['memcached-conf'],
             User['memcached'],
         ]
     }
