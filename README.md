@@ -16,18 +16,35 @@ To use defaults:
 include memcached
 ```
 
-To run multiple instances:
+Or to change settings:
 
 ```puppet
-include memcached
+class { 'memcached':
+    connections => 10000,
+    listen      => 1.2.3.4,
+    memory      => 128,
+    port        => 11211,
+}
+```
 
-memcached::config { instance1:
-	port	=> 11211,
+You can also add more instances:
+
+```puppet
+# first instance
+class { 'memcached':
+    port    => 11211,
+    memory  => 64,
+}
+
+# second instance
+memcached::config { instance2:
+	port	=> 11212,
 	memory	=> 64,
 }
 
-memcached::config { instance2:
-	port	=> 11212,
+# third instance
+memcached::config { instance3:
+	port	=> 11213,
 	memory	=> 128,
 }
 ```
