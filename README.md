@@ -38,13 +38,13 @@ class { 'memcached':
 
 # second instance
 memcached::config { instance2:
-	port	=> 11212,
-	memory	=> 64,
+    port    => 11212,
+    memory  => 64,
 }
 
 # third instance
 memcached::config { instance3:
-	port	=> 11213,
-	memory	=> 128,
+    port    => 11213,
+    memory  => 128,
 }
 ```
